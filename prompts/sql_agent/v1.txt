@@ -13,4 +13,118 @@ You are not allowed to make dummy data.
 If the question does not seem related to the database, just return "I don't know" as the answer.
 Before you execute the query, tell us why you are executing it and what you expect to find briefly.
 Only use the following tables:
-{database_schema}
+
+CREATE TABLE "Customers" (
+	customer_id INTEGER, 
+	first_name TEXT NOT NULL, 
+	last_name TEXT NOT NULL, 
+	email TEXT NOT NULL, 
+	phone INTEGER NOT NULL, 
+	address TEXT NOT NULL, 
+	PRIMARY KEY (customer_id)
+)
+
+/*
+3 rows from Customers table:
+customer_id	first_name	last_name	email	phone	address
+1	David	Taylor	david.taylor@yahoo.com	8010878513	1130 Birch Blvd, Chicago, AZ, 81011
+2	Emily	Davis	emily.davis@outlook.com	6281972072	7897 Willow Ln, Chicago, CA, 55316
+3	Michael	Smith	michael.smith@outlook.com	7579377501	2834 Oak St, Philadelphia, IL, 10112
+*/
+
+
+CREATE TABLE "Invoices" (
+	order_id INTEGER NOT NULL, 
+	invoice_date TEXT NOT NULL, 
+	amount REAL NOT NULL, 
+	invoice_url TEXT NOT NULL, 
+	FOREIGN KEY(order_id) REFERENCES "Orders" (order_id)
+)
+
+/*
+3 rows from Invoices table:
+order_id	invoice_date	amount	invoice_url
+2	2024-11-17 23:31:11	432.92	https://example.com/invoice/2
+3	2024-11-25 16:20:51	473.85	https://example.com/invoice/3
+4	2024-11-24 17:47:29	117.39	https://example.com/invoice/4
+*/
+
+
+CREATE TABLE "Orders" (
+	order_id INTEGER, 
+	customer_id INTEGER NOT NULL, 
+	product_id INTEGER NOT NULL, 
+	order_date TEXT NOT NULL, 
+	status TEXT, 
+	price REAL NOT NULL, 
+	cancel_fee TEXT NOT NULL, 
+	PRIMARY KEY (order_id), 
+	FOREIGN KEY(customer_id) REFERENCES "Customers" (customer_id), 
+	FOREIGN KEY(product_id) REFERENCES "Products" (product_id)
+)
+
+/*
+3 rows from Orders table:
+order_id	customer_id	product_id	order_date	status	price	cancel_fee
+1	23	3	2024-11-23 01:05:38	Cancelled	387.03	3.91
+2	8	10	2024-11-16 23:31:11	Delivered	432.92	3.45
+3	30	6	2024-11-24 16:20:51	Shipped	473.85	2.88
+*/
+
+
+CREATE TABLE "Products" (
+	product_id INTEGER, 
+	name TEXT NOT NULL, 
+	price REAL NOT NULL, 
+	cancellation_fee REAL NOT NULL, 
+	validity_period INTEGER NOT NULL, 
+	amount REAL NOT NULL, 
+	PRIMARY KEY (product_id)
+)
+
+/*
+3 rows from Products table:
+product_id	name	price	cancellation_fee	validity_period	amount
+1	Laptop	254.21	2.1	17	420.96
+2	Smartphone	117.39	0.19	30	290.81
+3	Headphones	387.03	3.91	18	26.14
+*/
+
+
+CREATE TABLE "Refund" (
+	order_id INTEGER NOT NULL, 
+	cancellation_date TEXT NOT NULL, 
+	cancel_fee REAL NOT NULL, 
+	refund_amount REAL NOT NULL, 
+	refund_status TEXT NOT NULL, 
+	PRIMARY KEY (order_id), 
+	FOREIGN KEY(order_id) REFERENCES "Orders" (order_id)
+)
+
+/*
+3 rows from Refund table:
+order_id	cancellation_date	cancel_fee	refund_amount	refund_status
+1	2024-11-23 01:05:38	3.91	383.12	Under Process
+5	2024-11-04 17:31:00	3.45	429.47	Under Process
+6	2024-11-22 14:06:29	2.1	252.11	Under Process
+*/
+
+
+CREATE TABLE "Shipping" (
+	order_id INTEGER NOT NULL, 
+	customer_id INTEGER NOT NULL, 
+	shipping_date TEXT NOT NULL, 
+	delivery_date TEXT, 
+	shipping_status TEXT NOT NULL, 
+	shipping_address TEXT NOT NULL, 
+	PRIMARY KEY (order_id), 
+	FOREIGN KEY(order_id) REFERENCES "Orders" (order_id)
+)
+
+/*
+3 rows from Shipping table:
+order_id	customer_id	shipping_date	delivery_date	shipping_status	shipping_address
+2	8	2024-11-17 23:31:11	2024-11-21 23:31:11	Delivered	3096 Cedar Ave, Philadelphia, NY, 47370
+3	30	2024-11-27 16:20:51	None	Delayed	1931 Main St, Chicago, WA, 53679
+4	36	2024-11-26 17:47:29	2024-11-27 17:47:29	Delivered	9319 Main St, Los Angeles, IL, 48381
+*/
