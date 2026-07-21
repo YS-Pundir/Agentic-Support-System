@@ -1,0 +1,11 @@
+{
+    "sql_agent": {
+        "v1": {
+            "prompt_path": "d:/Agentic-Support-System/prompts/sql_agent/v1.txt",
+            "config": {
+                "model": "qwen/qwen3.6-27b",
+                "temperature": 0.0
+            }
+        }
+    }
+}
