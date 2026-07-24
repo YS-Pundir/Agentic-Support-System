@@ -1,0 +1,16 @@
+{
+    "support_agent": {
+        "v1": {
+            "prompt_path": "prompts/rag_agent/v1.txt",
+            "config": {
+                "model": "llama-3.1-8b-instant",
+                "temperature": 0.0,
+                "max_tokens": 512
+            },
+            "tools": [
+                "lookup_order"
+            ],
+            "max_tool_steps": 3
+        }
+    }
+}
