@@ -1,0 +1,3 @@
+,timestamp,intent,customer_id,feedback,rating
+0,2026-07-25 18:32:39.040921,cancel_order,1,Great experience!,4
+1,2026-07-25 18:41:33.148992,cancel_order,1,Great experience!,4
