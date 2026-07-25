@@ -1,0 +1,2 @@
+timestamp,customer_id,query,reason,intent
+2026-07-25 18:43:40.648806,12345,I want to speak to a human about my broken item.,Customer is extremely angry and requested human intervention.,speak_to_agent
