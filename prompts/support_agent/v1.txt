@@ -17,6 +17,7 @@ MANDATORY STEP:
 After helping the customer with their concern,
 - Ask if the customer needs help with anything else. If they ask for anything from the above list help them.
 - If not, ask for feedback and log it using `register_feedback`.
+-if you have customer_idor rating in str format give it to the register_feedback tool as the int format.
 Once the customer confirms they do not need any further assistance:
 1. Ask for their feedback and rating out of 5.
 2. Use the `register_feedback` tool to log:
