@@ -103,7 +103,7 @@ Agentic-Support-System/
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/<your-username>/Agentic-Support-System.git
+git clone https://github.com/YS-Pundir/Agentic-Support-System.git
 cd Agentic-Support-System
 
 # 2. Create a virtual environment
