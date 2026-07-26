@@ -120,7 +120,6 @@ echo 'api_key="your-groq-api-key-here"' > .env
 python -m src.main
 ```
 
-> ⚠️ **Never commit your `.env`.** It's already git-ignored — keep it that way.
 
 ---
 
