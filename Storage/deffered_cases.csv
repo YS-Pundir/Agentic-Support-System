@@ -1,2 +1,6 @@
 timestamp,customer_id,query,reason,intent
-2026-07-25 18:43:40.648806,12345,I want to speak to a human about my broken item.,Customer is extremely angry and requested human intervention.,speak_to_agent
+2026-07-26 14:33:44.222216,unknown,oc,insufficient information to answer the query,unknown
+2026-07-26 16:15:34.535714,unknown,order information,"The customer is asking for their order information, but I need more details to assist them.",order_tracking
+2026-07-26 16:36:03.367366,3,User wants personal advice on products and wants to talk to a personal advisor.,User requested to defer to a human agent for personal product advice.,product_advice
+2026-07-26 16:36:26.126372,3,User requests personal product advice and wants to defer to a human advisor.,User needs personal product advice which requires a human advisor.,product_advice
+2026-07-26 16:42:47.696546,4,User is not satisfied and requests to be deferred to a human agent.,User explicitly asked to be connected to a human representative.,escalation
