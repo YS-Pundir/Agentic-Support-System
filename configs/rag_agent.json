@@ -1,5 +1,5 @@
 {
-    "support_agent": {
+    "rag_agent": {
         "v1": {
             "prompt_path": "prompts/rag_agent/v1.txt",
             "config": {
@@ -8,7 +8,7 @@
                 "max_tokens": 512
             },
             "tools": [
-                "lookup_order"
+                "rag"
             ],
             "max_tool_steps": 3
         }
