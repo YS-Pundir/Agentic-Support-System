@@ -1,3 +1,5 @@
-,timestamp,intent,customer_id,feedback,rating
-0,2026-07-25 18:32:39.040921,cancel_order,1,Great experience!,4
-1,2026-07-25 18:41:33.148992,cancel_order,1,Great experience!,4
+,Unnamed: 0.1,Unnamed: 0,timestamp,intent,customer_id,feedback,rating
+0,0.0,0.0,2026-07-26 13:59:49.496865,cancel_order,1,Great experience!,4
+1,1.0,,2026-07-26 16:34:14.707902,order_delivery_days,3,helpful,5
+2,2.0,,2026-07-26 16:37:14.949415,general_feedback,3,polite,5
+3,,,2026-07-26 16:43:58.235548,general_feedback,4,very insufficient,2
