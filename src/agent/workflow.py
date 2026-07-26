@@ -1,5 +1,5 @@
 from src.sources.llm import support_llm
-from src.sources.truncation import windowed_history
+
 from src.config import support_prompt,conversation_history_location,support_log_location
 from langchain_classic.agents import AgentExecutor, create_tool_calling_agent
 from langchain_core.prompts import ChatPromptTemplate,MessagesPlaceholder
@@ -29,7 +29,7 @@ from tenacity import (
 # 2. Clear out any existing handlers so Python doesn't write to the old file
 for handler in logging.root.handlers[:]:
   logging.root.removeHandler(handler)
-  
+
 logging.basicConfig(
     level=logging.INFO,
     filename=support_log_location,
