@@ -180,9 +180,6 @@ Being upfront about what's next — this is an active learning project, not a fi
 
 ---
 
-## 📄 License
-
-MIT — see [`LICENSE`](LICENSE) for details.
 
 <div align="center">
 
