@@ -3,7 +3,7 @@
         "v1": {
             "prompt_path": "prompts/sql_agent/v1.txt",
             "config": {
-                "model": "qwen/qwen3.6-27b",
+                "model": "qwen/qwen3.8-27b",
                 "temperature": 0.0
             }
         }
